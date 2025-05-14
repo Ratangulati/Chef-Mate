@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cook It Now - Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="recipes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script defer src="recipes.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="ChefMate Logo" class="logo-img" />
+        </a>
+        <span class="logo-text">ChefMate</span>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="recipes-container">
+    <h1>Cook It Now</h1>
+    <p class="subtitle">Find recipes with ingredients you already have</p>
+
+    <section class="search-section">
+      <div class="pantry-container">
+        <h2>My Pantry</h2>
+        <div class="input-container">
+          <input type="text" id="ingredient-input" placeholder="Add ingredient (e.g., chicken, rice)" />
+          <button id="add-ingredient" class="btn">Add</button>
+        </div>
+        <div id="ingredient-tags" class="ingredient-tags">
+          <!-- Tags will be added here dynamically -->
+        </div>
+      </div>
+
+      <div class="filters-container">
+        <h2>Filters</h2>
+        
+        <div class="dietary-restrictions">
+          <h3>Dietary Restrictions</h3>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label>
+            <label><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+            <label><input type="checkbox" name="diet" value="gluten-free"> Gluten-Free</label>
+            <label><input type="checkbox" name="diet" value="dairy-free"> Dairy-Free</label>
+          </div>
+        </div>
+        
+        <div class="cooking-time">
+          <h3>Cooking Time</h3>
+          <p>Maximum cooking time: <span id="time-value">30</span> minutes</p>
+          <input type="range" id="time-slider" min="5" max="120" step="5" value="30" class="slider">
+        </div>
+        
+        <button id="find-recipes" class="btn find-btn">Find Recipes</button>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <h2>Recipes You Can Make</h2>
+      <div id="loading" class="loading-spinner hidden"></div>
+      <div id="error-message" class="error-message hidden"></div>
+      <div id="recipes-grid" class="recipes-grid">
+        <p id="no-recipes" class="no-recipes-message">Search for recipes with your ingredients!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Recipe Modal -->
+  <div id="recipe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="assets/college.png" alt="College Logo" class="footer-image" />
+      <div class="footer-info">
+        <p>Project done by Ratan Gulati</p>
+        <p>Shree Guru Gobind Singh Ji Govt College Paonta Sahib</p>
+        <p>Himachal Pradesh University</p>
+        <p>&copy; All rights reserved</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">GitHub</a> | <a href="#">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
